@@ -1,0 +1,79 @@
+{% extends "base.html" %} 
+{% block title %}House Rental Charts{% endblock %} 
+{% block content %} 
+<div class="content-wrapper">
+  <div class="row">
+	<div class="col-md-12 grid-margin">
+   <h2 class="font-weight-bold">Apartment price</h2>
+      
+        <div class="row">
+          <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+			
+			<div class="sectiontitle">
+			<p class = "par-custom">
+				This page shows house prices in different regions in USA and how the price changes with time. The multi-line chart compares two bedroom apartment prices in New York, Los Angeles, and Chicago for the month of October in different years.</p>
+			</div>
+			
+			<!--</textarea>-->
+          </div>
+        </div>
+      </div>
+    <div class="col-lg-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Line chart</h4>
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Bar chart</h4>
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Area chart</h4>
+          <canvas id="areaChart"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Doughnut chart</h4>
+		  <p>Average Two Bedroom Apartment Rent in New York</p>
+          <canvas id="doughnutChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Multiline chart</h4>
+          <canvas id="linechart-multi2"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Pie chart</h4>
+          <canvas id="pieChart"></canvas>
+		 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- content-wrapper ends -->
+{% endblock %} 
+

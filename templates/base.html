@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}Home{% endblock %}</title>
+  <!-- plugins:css -->
+  <link href="{{url_for('static', filename = 'feather.css')}}" rel="stylesheet">
+  <link href="{{url_for('static', filename = 'themify-icons.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+   
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link href="{{url_for('static', filename = 'style.css')}}" rel="stylesheet">
+  <!-- endinject -->
+  <link href="{{url_for('static', filename = 'name.png')}}" rel="shortcut icon">
+</head>
+<body>
+	
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href= "{{ url_for('home') }}" ><img src="{{url_for('static', filename='house3.svg')}}"  class="mr-2" alt = "logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+         <ul class="navbar-nav navbar-nav-right">
+      
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+		
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href= "{{ url_for('home') }}">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Home</span>
+            </a>
+          </li>
+		  
+		  
+		  <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <i class="icon-bar-graph menu-icon"></i>
+              <span class="menu-title">Charts</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href= "{{ url_for('charts') }}">House Rental Charts</a></li>
+              </ul>
+            </div>
+			<div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href= "{{ url_for('charts_price') }}">House Price Charts</a></li>
+              </ul>
+            </div>
+          </li>
+          
+		  <li class="nav-item">
+            <a class="nav-link" href= "{{ url_for('powerbi') }}">
+              <i class="icon-bar-graph menu-icon"></i>
+              <span class="menu-title">Power BI Visuals</span>
+            </a>
+          </li>
+		  
+		  
+		  <li class="nav-item">
+            <a class="nav-link" href= "{{ url_for('price') }}">
+              <i class="icon-contract menu-icon"></i>
+              <span class="menu-title">Price Prediction</span>
+            </a>
+          </li>
+         
+		  
+		  <li class="nav-item">
+            <a class="nav-link" href= "{{ url_for('documents') }}">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li>
+          
+        </ul>
+      </nav>
+	  
+	  
+      <!-- partial -->
+      <div class="main-panel">
+	  
+      {% block content %} {% endblock %}
+
+		<footer class="bg-dark text-center text-white">
+		<!-- Grid container -->
+		<div class="container p-3 pb-1">
+			<!-- Section: Social media -->
+			<section class="mb-1">
+			<!-- Facebook -->
+			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+				><i class="fab fa-facebook-f"></i
+			></a>
+		
+			<!-- Twitter -->
+			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+				><i class="fab fa-twitter"></i
+			></a>
+		
+			<!-- Google -->
+			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+				><i class="fab fa-google"></i
+			></a>
+		
+			<!-- Instagram -->
+			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+				><i class="fab fa-instagram"></i
+			></a>
+		
+			<!-- Linkedin -->
+			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+				><i class="fab fa-linkedin-in"></i
+			></a>
+		
+			<!-- Github -->
+			<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+				><i class="fab fa-github"></i
+			></a>
+			</section>
+			<!-- Section: Social media -->
+		</div>
+		<!-- Grid container -->
+		&copy; Copyright 2022 
+		</footer>
+  
+<!-- End of .container -->
+		
+
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+	
+  <!-- plugins:js -->
+  <script src="{{url_for('static', filename = 'vendor.bundle.base.js')}}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{{url_for('static', filename = 'Chart.min.js')}}"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{{url_for('static', filename = 'off-canvas.js')}}"></script>
+  <script src="{{url_for('static', filename = 'hoverable-collapse.js')}}"></script>
+  <script src="{{url_for('static', filename = 'template.js')}}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{{url_for('static', filename = 'dashboard.js')}}"></script>
+  <script src="{{url_for('static', filename = 'Chart.roundedBarCharts.js')}}"></script>
+  <!-- <script src="{{url_for('static', filename = 'chart.js')}}"></script>-->
+  <!-- End custom js for this page-->
+  <script>
+$(function() {
+  /* ChartJS
+   * -------
+   * Data and config for chartjs
+   */
+  'use strict';
+  var data = {
+    /*labels: ["2013", "2014", "2014", "2015", "2016", "2017"],*/
+	labels: {{ labels_ny|safe }},
+    datasets: [{
+      label: 'One Bedroom New York',
+      /*data: [10, 19, 3, 5, 2, 3],*/
+	  data: {{ data_ny|safe }},
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+    }]
+  };
+  
+  var data2 = {
+    /*labels: ["2013", "2014", "2014", "2015", "2016", "2017"],*/
+	labels: {{ labels_ny|safe }},
+    datasets: [{
+      label: 'One Bedroom Chicago',
+      /*data: [10, 19, 3, 5, 2, 3],*/
+	  data: {{ data_cg|safe }},
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+    }]
+  };
+  
+  
+
+  var multiLineData = {
+     labels: {{ labels_ny|safe }},
+     datasets: [{
+         label: 'One Bedroom NY',
+         data: {{ data_ny|safe }},
+         borderColor: [
+           '#587ce4'
+         ],
+         borderWidth: 2,
+         fill: false
+       },
+       {
+         label: 'One Bedroom LA',
+         data: {{ data_la|safe }},
+         borderColor: [
+           '#ede190'
+         ],
+         borderWidth: 2,
+         fill: false
+       },
+       {
+         label: 'One Bedroom Chicago',
+         data: {{ data_cg|safe }},
+         borderColor: [
+           '#f44252'
+         ],
+         borderWidth: 2,
+         fill: false
+       }
+     ]
+   };
+   
+   var multiLineData2 = {
+     labels: {{ labels_ny|safe }},
+     datasets: [{
+         label: 'Two Bedroom NY',
+         data: {{ data_ny_2|safe }},
+         borderColor: [
+           '#587ce4'
+         ],
+         borderWidth: 2,
+         fill: false
+       },
+       {
+         label: 'Two Bedroom LA',
+         data: {{ data_la_2|safe }},
+         borderColor: [
+           '#ede190'
+         ],
+         borderWidth: 2,
+         fill: false
+       },
+       {
+         label: 'Two Bedroom Chicago',
+         data: {{ data_cg_2|safe }},
+         borderColor: [
+           '#f44252'
+         ],
+         borderWidth: 2,
+         fill: false
+       }
+     ]
+   };
+   
+  var options = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: false
+        }
+      }]
+    },
+	
+    legend: {
+      display: true
+    },
+    elements: {
+      point: {
+        radius: 0
+      }
+    }
+
+  };
+  
+  var doughnutPieData = {
+    datasets: [{
+	  label: 'Average Two Bedroom Apartment rent New York',
+      data: {{ data_ny_2_avg|safe }},
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+    }],
+	
+	labels: {{ labels_ny_2_avg|safe }}
+	
+	};
+	
+	var doughnutPieData2 = {
+    datasets: [{
+	  label: 'Average Two Bedroom Apartment rent New York',
+      data: {{ data_la_2_avg|safe }},
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+    }],
+	
+	labels: {{ labels_ny_2_avg|safe }}
+	
+	};
+	
+	var doughnutPieOptions = {
+    responsive: true,
+	legend: {
+      display: true
+    },
+    animation: {
+      animateScale: true,
+      animateRotate: true
+    }
+  };
+  
+  var areaData = {
+    labels: {{ labels_ny_2|safe }},
+    datasets: [{
+      label: 'Two Bedroom Apartments New York',
+      data: {{ data_ny_2|safe }},
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: true, // 3: no fill
+    }]
+  };
+  
+  var areaOptions = {
+    plugins: {
+      filler: {
+        propagate: true
+      }
+    }
+  }
+  
+  var multiAreaData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+        label: 'Facebook',
+        data: [8, 11, 13, 15, 12, 13, 16, 15, 13, 19, 11, 14],
+        borderColor: ['rgba(255, 99, 132, 0.5)'],
+        backgroundColor: ['rgba(255, 99, 132, 0.5)'],
+        borderWidth: 1,
+        fill: true
+      },
+      {
+        label: 'Twitter',
+        data: [7, 17, 12, 16, 14, 18, 16, 12, 15, 11, 13, 9],
+        borderColor: ['rgba(54, 162, 235, 0.5)'],
+        backgroundColor: ['rgba(54, 162, 235, 0.5)'],
+        borderWidth: 1,
+        fill: true
+      },
+      {
+        label: 'Linkedin',
+        data: [6, 14, 16, 20, 12, 18, 15, 12, 17, 19, 15, 11],
+        borderColor: ['rgba(255, 206, 86, 0.5)'],
+        backgroundColor: ['rgba(255, 206, 86, 0.5)'],
+        borderWidth: 1,
+        fill: true
+      }
+    ]
+  };
+  
+  var multiAreaOptions = {
+    plugins: {
+      filler: {
+        propagate: true
+      }
+    },
+    elements: {
+      point: {
+        radius: 0
+      }
+    },
+    scales: {
+      xAxes: [{
+        gridLines: {
+          display: false
+        }
+      }],
+      yAxes: [{
+        gridLines: {
+          display: false
+        }
+      }]
+    }
+  }
+  
+  var scatterChartData = {
+    datasets: [{
+        label: 'First Dataset',
+        data: [{
+            x: -10,
+            y: 0
+          },
+          {
+            x: 0,
+            y: 3
+          },
+          {
+            x: -25,
+            y: 5
+          },
+          {
+            x: 40,
+            y: 5
+          }
+        ],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)'
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'Second Dataset',
+        data: [{
+            x: 10,
+            y: 5
+          },
+          {
+            x: 20,
+            y: -30
+          },
+          {
+            x: -25,
+            y: 15
+          },
+          {
+            x: -10,
+            y: 5
+          }
+        ],
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.2)',
+        ],
+        borderColor: [
+          'rgba(54, 162, 235, 1)',
+        ],
+        borderWidth: 1
+      }
+    ]
+  }
+  
+  var scatterChartOptions = {
+    scales: {
+      xAxes: [{
+        type: 'linear',
+        position: 'bottom'
+      }]
+    }
+  }
+  
+  if ($("#barChart").length) {
+    var barChartCanvas = $("#barChart").get(0).getContext("2d");
+    // This will get the first returned node in the jQuery collection.
+    var barChart = new Chart(barChartCanvas, {
+      type: 'bar',
+      data: data2,
+      options: options
+    });
+  }
+
+  // Get context with jQuery - using jQuery's .get() method.
+  
+  if ($("#lineChart").length) {
+  
+    var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
+    var lineChart = new Chart(lineChartCanvas, {
+      type: 'line',
+      data: data,
+      options: options
+    });
+  }
+  
+  if ($("#linechart-multi").length) {
+    var multiLineCanvas = $("#linechart-multi").get(0).getContext("2d");
+    var lineChart = new Chart(multiLineCanvas, {
+      type: 'line',
+      data: multiLineData,
+      options: options
+    });
+  }
+  
+  if ($("#linechart-multi2").length) {
+    var multiLineCanvas = $("#linechart-multi2").get(0).getContext("2d");
+    var lineChart = new Chart(multiLineCanvas, {
+      type: 'line',
+      data: multiLineData2,
+      options: options
+    });
+  }
+  
+  if ($("#areachart-multi").length) {
+    var multiAreaCanvas = $("#areachart-multi").get(0).getContext("2d");
+    var multiAreaChart = new Chart(multiAreaCanvas, {
+      type: 'line',
+      data: multiAreaData,
+      options: multiAreaOptions
+    });
+  }
+  
+  if ($("#doughnutChart").length) {
+    var doughnutChartCanvas = $("#doughnutChart").get(0).getContext("2d");
+    var doughnutChart = new Chart(doughnutChartCanvas, {
+      type: 'doughnut',
+      data: doughnutPieData,
+      options: doughnutPieOptions
+    });
+  }
+
+  if ($("#pieChart").length) {
+    var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
+    var pieChart = new Chart(pieChartCanvas, {
+      type: 'pie',
+      data: doughnutPieData2,
+      options: doughnutPieOptions
+    });
+  }
+
+  if ($("#areaChart").length) {
+    var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
+    var areaChart = new Chart(areaChartCanvas, {
+      type: 'line',
+      data: areaData,
+      options: areaOptions
+    });
+  }
+
+  if ($("#scatterChart").length) {
+    var scatterChartCanvas = $("#scatterChart").get(0).getContext("2d");
+    var scatterChart = new Chart(scatterChartCanvas, {
+      type: 'scatter',
+      data: scatterChartData,
+      options: scatterChartOptions
+    });
+  }
+
+  if ($("#browserTrafficChart").length) {
+    var doughnutChartCanvas = $("#browserTrafficChart").get(0).getContext("2d");
+    var doughnutChart = new Chart(doughnutChartCanvas, {
+      type: 'doughnut',
+      data: browserTrafficData,
+      options: doughnutPieOptions
+    });
+  }
+
+});
+</script>
+<script>
+	
+	var data = {
+    /*labels: ["2013", "2014", "2014", "2015", "2016", "2017"],*/
+	labels: {{ labels_ny|safe }},
+    datasets: [{
+      label: 'One Bedroom New York',
+      /*data: [10, 19, 3, 5, 2, 3],*/
+	  data: {{ data_ny|safe }},
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+    }]
+  };
+  var options = {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: false
+        }
+      }]
+    },
+	
+    legend: {
+      display: true
+    },
+    elements: {
+      point: {
+        radius: 0
+      }
+    }
+
+  };
+  
+  if ($("#myChart").length) {
+  
+    var lineChartCanvas = $("#myChart").get(0).getContext("2d");
+    var lineChart = new Chart(lineChartCanvas, {
+      type: 'line',
+      data: data,
+      options: options
+    });
+  }
+  
+  var multiLineData = {
+     labels: {{ labels_ny|safe }},
+     datasets: [{
+         label: 'One Bedroom NY',
+         data: {{ data_ny|safe }},
+         borderColor: [
+           '#587ce4'
+         ],
+         borderWidth: 2,
+         fill: false
+       },
+       {
+         label: 'One Bedroom LA',
+         data: {{ data_la|safe }},
+         borderColor: [
+           '#ede190'
+         ],
+         borderWidth: 2,
+         fill: false
+       },
+       {
+         label: 'One Bedroom Chicago',
+         data: {{ data_cg|safe }},
+         borderColor: [
+           '#f44252'
+         ],
+         borderWidth: 2,
+         fill: false
+       }
+     ]
+   };
+   if ($("#myChart1").length) {
+    var multiLineCanvas = $("#myChart1").get(0).getContext("2d");
+    var lineChart = new Chart(multiLineCanvas, {
+      type: 'line',
+      data: multiLineData,
+      options: options
+    });
+  }
+  
+</script>
+{% block jscript %} {% endblock %}			
+</body>
+
+</html>

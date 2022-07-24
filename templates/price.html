@@ -1,0 +1,142 @@
+{% extends "base.html" %} 
+{% block title %}House Price Prediction{% endblock %} 
+{% block style %}
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %} 
+    <div class="content-wrapper">
+	<h3 class="font-weight-bold" style = "font-size:30px; margin-bottom:40px">Apartment Price and Rent Prediction</h3>
+    <div class="sectiontitle">
+	<p class = "par-custom">
+	First select whether you want to predict apartment rent or price. Then select the city followed by the number of rooms in the apartment Finally, select the month and year. 
+	</p>
+	</div>
+			  
+      <form method="POST">
+        <fieldset>
+          
+         
+			<label>Select price or rent of apartment that you want to predict</label>
+              <div>
+                <input type="radio" value="rent" id="radio_3" name="rentPrice"/>
+                <label for="radio_3" class="radio"><span>Rent</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="price" id="radio_4" name="rentPrice"/>
+                <label for="radio_4" class="radio"><span>Price</span></label>
+              </div>
+            <label>Select the number of rooms in the apartment</label>
+            <div class="question-answer">
+              <div>
+                <input type="radio" value="one" id="radio_3" name="apartment"/>
+                <label for="radio_3" class="radio"><span>One</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="two" id="radio_4" name="apartment"/>
+                <label for="radio_4" class="radio"><span>Two</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="three" id="radio_5" name="apartment"/>
+                <label for="radio_5" class="radio"><span>Three</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="four" id="radio_6" name="apartment"/>
+                <label for="radio_6" class="radio"><span>Four</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="five" id="radio_7" name="apartment"/>
+                <label for="radio_7" class="radio"><span>Five or more</span></label>
+              </div>
+			  </div>
+			
+			<div class="item">
+             <label>Select the city</label>
+            <div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			<span id="usernamelabel">Select city</span>
+			<span class="caret"></span>
+			</button>
+			<nav>
+			<ul class="dropdown-menu", style="height:200px; width:18%; overflow:hidden; overflow-y:scroll;">
+			<li><input type="radio" id="username1" name="username" value="New York"><label for="username1">New York</label></li>
+			<li><input type="radio" id="username2" name="username" value="Los Angeles"><label for="username2">Los Angeles</label></li>
+			<li><input type="radio" id="username3" name="username" value="Nashville"><label for="username3">Nashville</label></li>
+
+			<li><input type="radio" id="username1" name="username" value="Chicago"><label for="username1">Chicago</label></li>
+			<li><input type="radio" id="username2" name="username" value="San Antonio"><label for="username2">San Antonio</label></li>
+			<li><input type="radio" id="username3" name="username" value="Houston"><label for="username3">Houston</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="Philadelphia"><label for="username1">Philadelphia</label></li>
+			<li><input type="radio" id="username2" name="username" value="Phoenix"><label for="username2">Phoenix</label></li>
+			<li><input type="radio" id="username3" name="username" value="Las Vegas"><label for="username3">Las Vegas</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="San Diego"><label for="username1">San Diego</label></li>
+			<li><input type="radio" id="username2" name="username" value="Phoenix"><label for="username2">Phoenix</label></li>
+			<li><input type="radio" id="username3" name="username" value="Dallas"><label for="username3">Dallas</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="Austin"><label for="username1">Austin</label></li>
+			<li><input type="radio" id="username2" name="username" value="San Jose"><label for="username2">San Jose</label></li>
+			<li><input type="radio" id="username3" name="username" value="Jacksonville"><label for="username3">Jacksonville</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="Indianapolis"><label for="username1">Indianapolis</label></li>
+			<li><input type="radio" id="username2" name="username" value="San Francisco"><label for="username2">San Francisco</label></li>
+			<li><input type="radio" id="username3" name="username" value="Charlotte"><label for="username3">Charlotte</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="Fort Worth"><label for="username1">Fort Worth</label></li>
+			<li><input type="radio" id="username2" name="username" value="Tucson"><label for="username2">Tucson</label></li>
+			<li><input type="radio" id="username3" name="username" value="Columbus"><label for="username3">Columbus</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="Louisville"><label for="username1">Louisville</label></li>
+			<li><input type="radio" id="username2" name="username" value="Orlando"><label for="username2">Orlando</label></li>
+			<li><input type="radio" id="username3" name="username" value="El Paso"><label for="username3">El Paso</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="Detroit"><label for="username1">Detroit</label></li>
+			<li><input type="radio" id="username2" name="username" value="Denver"><label for="username2">Denver</label></li>
+			<li><input type="radio" id="username3" name="username" value="Seattle"><label for="username3">Seattle</label></li>
+			
+			<li><input type="radio" id="username1" name="username" value="Memphis"><label for="username1">Memphis</label></li>
+			<li><input type="radio" id="username2" name="username" value="Boston"><label for="username2">Boston</label></li>
+			<li><input type="radio" id="username3" name="username" value="Washington"><label for="username3">Washington</label></li>
+			
+			</ul>
+			</nav>
+			</div>
+          </div>
+		  
+          <div class="item">
+            <label for="bdate">Year & month <span></span></label>
+            <input id="bdate" type="date" name="bdate" />
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+		  
+          
+        </fieldset>
+				
+        <div>
+          <button style="margin-bottom:15px" class="btn btn-success" type="submit" href="/">Submit</button>
+        </div>
+		
+      </form>
+		<!--{% for mesg in get_flashed_messages() %}
+		<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px;">The {{ mesg }} is: </p>
+		{% endfor %}
+		<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px;">The {{ rent }} for {{ apartment }} bedroom apartment is {{ predicted }}.<p>
+		-->
+
+		{% if rent is defined and rent|length %}
+			<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px;">The predicted {{ rent }} for {{ apartment }} bedroom apartment in {{ regionName }} in {{ month }} of {{ year }}: {{ predicted }}.<p>
+			<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px;">{{ message }}<p>
+	
+		{% endif %}
+		{% for error in errors %}
+        <h4>{{ error }}</h4>
+		{% endfor %}
+	</div>
+{% endblock %} 

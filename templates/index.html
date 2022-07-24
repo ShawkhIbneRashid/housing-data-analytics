@@ -1,0 +1,131 @@
+{% extends "base.html" %} 
+{% block title %}House Price Analysis{% endblock %} 
+{% block content %}  
+<!-- partial -->
+
+  <div class="content-wrapper">
+  <div class="row">
+  <div class="col-md-12 grid-margin">
+   <h2 class="font-weight-bold">Welcome to the Housing Data Analytics Website</h2>
+      
+        <div class="row">
+          <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+			
+			<div class="sectiontitle">
+			<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px; line-height: 1.5 ">
+					When it comes to housing market, it can seem confusing and gathering and analyzing data can be a challenging
+					task. But our website is here to help you with the housing price analysis task. Moreover, we will predict house rent
+					and price based on area by analyzing the historical data. The data used here is collected from Zillow. </p>
+			</div>
+			
+			<!--</textarea>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+  
+  
+      <div class="col-md-6 grid-margin stretch-card">
+        
+  
+        <div class="card position-relative">
+          <div class="card-body">
+            <div id="detailedReports" class="carousel slide detailed-report-carousel position-static pt-2" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+				
+				<div class="col-md-12 d-flex flex-column justify-content-start">
+				<div class="card">
+					<div class="card-body">
+					<p class="card-title">Order Details</p>
+					<p class="font-weight-500">Average rent for one bedroom apartments in New York for the month October from 2011 to 2019. The rent was the highest in 2013 and then it decreased to the lowest value the following year.</p>
+					
+					<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+					</div>
+				</div>
+				</div>
+				  
+                  </div>
+                </div>
+			  
+                <div class="carousel-item">
+                  <div class="row">
+      
+				<div class="col-md-12 d-flex flex-column justify-content-start">
+				<div class="card">
+					<div class="card-body">
+					<div class="d-flex justify-content-between">
+					<p class="card-title">Sales Report</p>
+					</div>
+					<p class="font-weight-500">We can see a comparison among average house rent for one bedroom apartments in New York, Los Angeles and Chicago. We can see an upward trend for Los Angeles and Chicago and the rent fluctuates for Chicago.</p>
+					
+					<canvas id="myChart1" style="height:80%,width:100%;max-width:700px"></canvas>
+					</div>
+				</div>
+				</div>
+				</div>
+                </div>  
+			  
+              </div>
+              <a class="carousel-control-prev" href="#detailedReports" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#detailedReports" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+	
+    </div>
+	
+      <div class="col-md-6 grid-margin transparent">
+        <div class="row">
+          <div class="col-md-6 mb-4 stretch-card transparent">
+            <div class="card card-tale">
+              <div class="card-body">
+                <p class="mb-4">Lowest rent in one bedroom apartment in New York</p>
+                <p class="fs-30 mb-2">{{ data_ny | min }}</p>
+                <p>Year and month: {{ labels_ny[3] }}, {{ labels_ny[4] }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4 stretch-card transparent">
+            <div class="card card-dark-blue">
+              <div class="card-body">
+                <p class="mb-4">Highest rent in one bedroom apartment in New York</p>
+                <p class="fs-30 mb-2">{{ data_ny | max }}</p>
+				<p>Year and month: {{ labels_ny[2] }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+            <div class="card card-light-blue">
+              <div class="card-body">
+                <p class="mb-4">Highest rent in one bedroom apartment in Los Angeles</p>
+                <p class="fs-30 mb-2">{{ data_ny | max }}</p>
+                <p>Year and month: {{ labels_la[7] }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 stretch-card transparent">
+            <div class="card card-light-danger">
+              <div class="card-body">
+                <p class="mb-4">Highest rent in one bedroom apartment in Chicago</p>
+                <p class="fs-30 mb-2">{{ data_cg | max }}</p>
+                <p>{{ labels_cg[0] }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+  
+{% endblock %} 

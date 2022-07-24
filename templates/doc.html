@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Documentation{% endblock %} 
+{% block content %}
+<div class="content-wrapper">
+<div class="col-md-12 grid-margin">
+<h3>Datasets</h3>
+<p class = "par-custom">
+There are total 11 datasets used here. The datasets contain price and rent for apartments in different regions of America. The apartments can contain different number of rooms and their rent and price varies based on time and room numbers. More information about them can be accessed from 
+<a href="https://www.kaggle.com/datasets/paultimothymooney/zillow-house-price-data"> dataset_link.</a> 
+One of the datasets contain other information like area, number of pools, bathrooms, and year built. More information about this dataset can be found in <a href="https://www.kaggle.com/competitions/zillow-prize-1/data?select=properties_2016.csv"> dataset_link.</a> 
+I used this dataset to create report in Microsoft PowerBI. The report contains some visual representation showing relationsip among different attributes of the dataset in the form of bar graph, line graph, bar graph, scatter chart, matrix, and table.
+</p>
+<h3 style = "margin-top:20px;">Data Visualization</h3>
+<p class = "par-custom">
+The charts section of the site shows how the rent changes with time and number of rooms and compare prices among different regions. For this purpose, different charts like line, bar, area, doughnut, pie charts have been used.
+</p>
+<h3 style = "margin-top:20px;">Price/Rent Prediction</h3>
+<p class = "par-custom">
+The rent and price are predicted based on the historical data given in the rent and price datasets. First, I tried to find a pattern from the historical data and based on the pattern, a predicted price or rent of the apartment is shown to the user. For this, the users first have to specify the number of rooms and the month and year that they want to get a prediction of. 
+</p>
+</div>
+</div>
+{% endblock %}
