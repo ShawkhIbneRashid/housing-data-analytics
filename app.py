@@ -28,15 +28,16 @@ from statsmodels.tsa.stattools import adfuller
 
 app = Flask(__name__)
 #app = Flask(__name__, template_folder='../../frontend/src')
-app.secret_key = "" #provide a secret key
+app.secret_key = "@##WDSA,xhfef1231223&*(((}}" #provide a secret key
 CORS(app)
 
 mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = '' #database user
-app.config['MYSQL_DATABASE_PASSWORD'] = '' #put password for the database
-app.config['MYSQL_DATABASE_DB'] = '' #database name
-app.config['MYSQL_DATABASE_HOST'] = '' #host name
+app.config['MYSQL_DATABASE_USER'] = 'rentalDBTe' #database user
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Mgty89!#H0' #put password for the database
+app.config['MYSQL_DATABASE_DB'] = 'rental_csv' #database name
+app.config['MYSQL_DATABASE_HOST'] = 'database-1.crxlpbknnu4o.ca-central-1.rds.amazonaws.com' #host name
 mysql.init_app(app)
+
 
 #app = Flask(__name__)
 #app.secret_key = "@##WDSA,xhfef1231223&*(((}}"

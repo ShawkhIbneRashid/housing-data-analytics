@@ -131,7 +131,7 @@
 		-->
 
 		{% if rent is defined and rent|length %}
-			<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px;">The predicted {{ rent }} for {{ apartment }} bedroom apartment in {{ regionName }} in {{ month }} of {{ year }}: {{ predicted }}.<p>
+			<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px;">The predicted {{ rent }} for {{ apartment }} bedroom apartment in {{ regionName }} in {{ month }} of {{ year }} is ${{ predicted }}.<p>
 			<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px;">{{ message }}<p>
 	
 		{% endif %}

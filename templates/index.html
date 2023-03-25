@@ -13,9 +13,9 @@
 			
 			<div class="sectiontitle">
 			<p style = "font-size:20px; text-align: justify; text-justify: inter-word; margin-top:10px; line-height: 1.5 ">
-					When it comes to housing market, it can seem confusing and gathering and analyzing data can be a challenging
-					task. But our website is here to help you with the housing price analysis task. Moreover, we will predict house rent
-					and price based on area by analyzing the historical data. The data used here is collected from Zillow. </p>
+					Gathering and analyzing apartement rent and price data can be a challenging
+					task. But our website is here to help you with the apartment price analysis task. Moreover, we will predict house rent
+					and price based on selected areas by analyzing the historical data. The data used here is collected from Zillow. </p>
 			</div>
 			
 			<!--</textarea>-->
@@ -90,7 +90,7 @@
               <div class="card-body">
                 <p class="mb-4">Lowest rent in one bedroom apartment in New York</p>
                 <p class="fs-30 mb-2">{{ data_ny | min }}</p>
-                <p>Year and month: {{ labels_ny[3] }}, {{ labels_ny[4] }}</p>
+                <p>Year and month: {{ labels_ny[3] }}</p>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@
               <div class="card-body">
                 <p class="mb-4">Highest rent in one bedroom apartment in Chicago</p>
                 <p class="fs-30 mb-2">{{ data_cg | max }}</p>
-                <p>{{ labels_cg[0] }}</p>
+                <p>Year and month: {{ labels_cg[0] }}</p>
               </div>
             </div>
           </div>
