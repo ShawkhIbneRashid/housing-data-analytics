@@ -26,17 +26,17 @@ import statsmodels.api as sm
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 from statsmodels.tsa.stattools import adfuller
 
-app = Flask(__name__)
-#app = Flask(__name__, template_folder='../../frontend/src')
-app.secret_key = "@##WDSA,xhfef1231223&*(((}}" #provide a secret key
-CORS(app)
+application = Flask(__name__)
+#application = Flask(__name__, template_folder='../../frontend/src')
+application.secret_key = "@##WDSA,xhfef1231223&*(((}}" #provide a secret key
+CORS(application)
 
 mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = 'rentalDBTe' #database user
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Mgty89!#H0' #put password for the database
-app.config['MYSQL_DATABASE_DB'] = 'rental_csv' #database name
-app.config['MYSQL_DATABASE_HOST'] = 'database-1.crxlpbknnu4o.ca-central-1.rds.amazonaws.com' #host name
-mysql.init_app(app)
+application.config['MYSQL_DATABASE_USER'] = 'rentalDBTe' #database user
+application.config['MYSQL_DATABASE_PASSWORD'] = 'Mgty89!#H0' #put password for the database
+application.config['MYSQL_DATABASE_DB'] = 'rental_csv' #database name
+application.config['MYSQL_DATABASE_HOST'] = 'database-1.crxlpbknnu4o.ca-central-1.rds.amazonaws.com' #host name
+mysql.init_app(application)
 
 
 #app = Flask(__name__)
@@ -115,7 +115,7 @@ def get_prediction(dates, price, d1, d2):
     
     return intPredict, message
 
-@app.route('/')
+@application.route('/')
 def home():
     SQL = "SELECT 2011Oct, 2012Oct, 2013Oct, 2014Oct, 2015Oct, 2016Oct, 2017Oct, 2018Oct, 2019Oct FROM `one_bed` WHERE `RegionName` = 'New York'"
     labels_ny, data_ny = list_create(SQL)
@@ -131,7 +131,7 @@ def home():
     data_cg=data_cg, labels_cg=labels_cg)
 
 
-@app.route('/charts')
+@application.route('/charts')
 def charts():
     SQL = "SELECT 2011Oct, 2012Oct, 2013Oct, 2014Oct, 2015Oct, 2016Oct, 2017Oct, 2018Oct, 2019Oct FROM `one_bed` WHERE `RegionName` = 'New York'"
     labels_ny, data_ny = list_create(SQL)
@@ -163,7 +163,7 @@ def charts():
     data_la_2_avg = data_la_2_avg)
 
 
-@app.route('/charts_price')
+@application.route('/charts_price')
 def charts_price():
     SQL = "SELECT 2011Oct, 2012Oct, 2013Oct, 2014Oct, 2015Oct, 2016Oct, 2017Oct, 2018Oct, 2019Oct FROM `one_bed_price` WHERE `RegionName` = 'New York'"
     labels_ny, data_ny = list_create(SQL)
@@ -194,11 +194,11 @@ def charts_price():
     data_ny_2_avg = data_ny_2_avg, data_la_2 = data_la_2, data_cg_2 = data_cg_2,
     data_la_2_avg = data_la_2_avg)
     
-@app.route('/powerbi')
+@application.route('/powerbi')
 def powerbi():
     return render_template("powerBI.html")
     
-@app.route('/price', methods=['GET', 'POST'])
+@application.route('/price', methods=['GET', 'POST'])
 def price():
     errors = []
     dataset_name = ""
@@ -230,11 +230,11 @@ def price():
     else:
         return render_template("price.html")
 
-@app.route('/documents')
+@application.route('/documents')
 def documents():
     return render_template("doc.html")
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def showMessage(error=None):
     message = {
         'status': 404,
@@ -244,7 +244,7 @@ def showMessage(error=None):
     respone.status_code = 404
     return respone
 
-@app.errorhandler(400)
+@application.errorhandler(400)
 def showMessage(error=None):
     message = {
         'status': 400,
@@ -255,4 +255,4 @@ def showMessage(error=None):
     return render_template("price.html")
         
 if __name__ == "__main__":
-    app.run()
+    application.run()
