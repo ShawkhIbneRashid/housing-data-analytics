@@ -20,8 +20,8 @@
   <h4>Prediction</h4>
   <p align="justify">  
   The rent and price are predicted based on the historical data given in the rent and price datasets. First, I tried to find a pattern from the historical data and based on the pattern, a predicted price or 
-  rent of the apartment is shown to the user. For this, the users first have to specify the number of rooms and the month and year that they want to get a prediction of. I have used ARIMA and SARIMAX models to predict the 
-  rent and price. First, I used some rows from a dataset to train ARIMA model to find the best order (value of p, d, q). Then based on the order and seasonal order, I used SARIMAX to predict the new data points.
+  rent of the apartment is shown to the user. For this, the users first have to specify the number of rooms and the month and year that they want to get a prediction of. I have used ARIMA model to predict the 
+  rent and price. First, I used some rows from a dataset to train ARIMA model to find the best order (value of p, d, q). Then based on the values of p, q and d, I used ARIMA to predict the new data points.
   </p>
   <h4>Back-end</h4>
   <p align="justify">

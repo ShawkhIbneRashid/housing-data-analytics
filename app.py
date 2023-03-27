@@ -95,7 +95,7 @@ def get_prediction(dates, price, d1, d2):
         }
 
     df = pd.DataFrame(boxes, columns= ['Date','Price'])
-    fit1 = sm.tsa.statespace.SARIMAX(df['Price'], order=(1,1,1),seasonal_order=(0,0,0,0)).fit()
+    fit1 = sm.tsa.arima.ARIMA(df['Price'], order=(1,1,1)).fit()
     d1 = datetime. strptime(d1, '%Y-%m-%d') #current date
     d2 = datetime.strptime(d2, '%Y-%m-%d') 
     if d1.year<int(dates[0][0:4]) or (d1.year==int(dates[0][0:4]) and d1.month<2):
